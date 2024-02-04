@@ -1,0 +1,5 @@
+.max-w-sm{
+    max-width: 300px; /* Adjust the maximum width of the card */
+    margin: 0 auto; /* Center the card horizontally */
+    margin-top: 100px; /* Add some top margin */
+}

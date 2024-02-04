@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from "./components/navbar"
+import './login.css'
+import RegestrationForm from "./components/RegestrationForm";
+import LoginPage from "./components/LoginForm";
+import HomePage from "./components/HomePage";
+
+
+import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+
+        <div>
+            <Navbar />
+            {/*<RegestrationForm/>*/}
+            <HomePage/>
+        </div>
+
+    );
 }
 
 export default App;
