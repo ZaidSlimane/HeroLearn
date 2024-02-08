@@ -1,53 +1,51 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../navbar.css";
 
 function Navbar() {
     const [active, setActive] = useState("nav__menu");
     const [icon, setIcon] = useState("nav__toggler");
-    const navToggle = () => {
-        if (active === "nav__menu") {
-            setActive("nav__menu nav__active");
-        } else setActive("nav__menu");
 
-        // Icon Toggler
-        if (icon === "nav__toggler") {
-            setIcon("nav__toggler toggle");
-        } else setIcon("nav__toggler");
+    const navToggle = () => {
+        setActive(active === "nav__menu" ? "nav__menu nav__active" : "nav__menu");
+        setIcon(icon === "nav__toggler" ? "nav__toggler toggle" : "nav__toggler");
     };
+
     return (
         <nav className="nav">
-            <a href="#" className="nav__brand">
+            <Link to="/" className="nav__brand">
                 herdoy
-            </a>
+            </Link>
             <ul className={active}>
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
+                    <Link to="/" className="nav__link">
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
+                    <Link to="/about" className="nav__link">
                         About
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className="nav__link">
-                        Login
-                    </a>
+                    <Link to="/login" className="nav__link">
+                        Log in
+                    </Link>
                 </li>
-                <li className="nav__item">
-                    <a href="#" className="nav__link">
-                        Services
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <button className="white-button">
-                        <a href="#" className="nav__link signup-link">
-                            Register
-                        </a>
-                    </button>
 
+                <li className="nav__item">
+                    <Link to="/admin" className="nav__link">
+                        Admin
+                    </Link>
                 </li>
+
+
+                <li className="nav__item">
+                    <Link to="/student" className="nav__link">
+                        Student
+                    </Link>
+                </li>
+
             </ul>
             <div onClick={navToggle} className={icon}>
                 <div className="line1"></div>
